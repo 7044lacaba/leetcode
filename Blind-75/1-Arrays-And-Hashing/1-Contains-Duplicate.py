@@ -1,14 +1,15 @@
+"""
+:type nums: List[int]
+:rtype: bool
+"""
+
 
 class Solution(object):
     def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-
         # Time: O(N^2)
         # Space: O(N)
         # Solution I came up with
+        
         copy = nums
         for i, item in enumerate(copy):
             copy.pop(i)
@@ -16,6 +17,8 @@ class Solution(object):
                 return True
         return False
     
+class Solution(object):
+    def containsDuplicate(self, nums):
         # Time: (nlogn)
         # Space: O(1)
         # Optimized solution
