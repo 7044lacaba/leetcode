@@ -39,8 +39,10 @@ class Solution(object):
         # Space: 
         # Solution:
 
-        #res = defaultdict(list)
+        d = {}
 
-
+        for word in strs:
+            key = tuple(sorted[word])
+            d[key] = d.get(key, []) + [word]
         
-        return
+        return d.values()
