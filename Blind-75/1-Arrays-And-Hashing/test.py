@@ -1,6 +1,7 @@
 list = [1,2,3,1]
 
+copy = list
 
-list.pop(0)
-
-print(list)
+for i, item in enumerate(list):
+    copy.pop(0)
+    print(copy)
