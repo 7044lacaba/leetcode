@@ -2,6 +2,12 @@ list = [1,2,3,1]
 
 copy = list
 
-for i, item in enumerate(list):
+for i in range(len(list)):
+    current = copy[0]
     copy.pop(0)
-    print(copy)
+
+
+    if current in copy:
+        print("True")
+    else:
+        print("False")
