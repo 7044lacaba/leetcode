@@ -29,10 +29,10 @@ class Solution(object):
         # Space: O(N)
         # Solution: 
 
-        maps = {}
-        for i, item in enumerate(nums):
-            diff = target - item
-            if diff in maps:
-                return [maps[diff], i]    
-            maps[item] = i
-        return
+        prevMap = {}  # val -> index
+
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return [prevMap[diff], i]
+            prevMap[n] = i
