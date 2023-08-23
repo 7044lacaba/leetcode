@@ -1,15 +1,11 @@
-"""
-:type strs: List[str]
-:rtype: List[List[str]]
-"""
-
 class Solution(object):
 
-    # Time:
-    # Space: 
-    # Solution:
-    
     def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+
         # Initalize
         copy = strs
         final_list = []
@@ -43,17 +39,3 @@ class Solution(object):
 
         return final_list
 
-
-class Solution(object):
-    def groupAnagrams(self, strs):
-        # Time:
-        # Space: 
-        # Solution:
-
-        d = {}
-
-        for word in strs:
-            key = tuple(sorted[word])
-            d[key] = d.get(key, []) + [word]
-        
-        return d.values()
