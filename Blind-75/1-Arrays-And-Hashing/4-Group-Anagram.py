@@ -2,6 +2,7 @@
 :type strs: List[str]
 :rtype: List[List[str]]
 """
+from collections import defaultdict
 
 class Solution(object):
 
@@ -50,10 +51,11 @@ class Solution(object):
         # Space: 
         # Solution:
 
-        d = {}
+        ans = defaultdict(list)
 
-        for word in strs:
-            key = tuple(sorted[word])
-            d[key] = d.get(key, []) + [word]
-        
-        return d.values()
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            ans[tuple(count)].append(s)
+        return ans.values()

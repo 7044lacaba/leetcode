@@ -1,13 +1,15 @@
 list = [1,2,3,1]
+class Solution(object):
+    def groupAnagrams(self, strs):
+        # Time:
+        # Space: 
+        # Solution:
 
-copy = list
+        ans = {}
 
-for i in range(len(list)):
-    current = copy[0]
-    copy.pop(0)
-
-
-    if current in copy:
-        print("True")
-    else:
-        print("False")
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            ans[tuple(count)].append(s)
+        return ans.values()
