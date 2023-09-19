@@ -5,17 +5,37 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
+        nums.sort()
+
+        current = nums[0]
+        counter = 0
         dict = {}
-        list_val = [0] * k
-        list_key = [0] * k
-        
-        for num in nums:
-            dict[num] = dict.get(num, 0) + 1
-        
-        for item in dict:
-            for i, spot, in enumerate(list_val):
-                if dict[item] > list_val[i]:
-                    list_val[i] = dict[item]
-                    list_key[i] = item
-                    break
-        return list_key
+
+        for i, item in enumerate(nums):
+            if (i + 1) == len(nums) and item != current:
+                dict[current] = counter
+                dict[item] = 1
+            elif (i + 1) == len(nums):
+                dict[current] = counter + 1
+            elif current != item:
+                dict[current] = counter
+                current = item
+                counter = 1
+            elif current == item:
+                counter += 1
+
+
+        temp = len(dict)
+        final = []
+
+        while len(final) != temp:
+            current = 0
+            most = 0
+            for item in dict:
+                if dict[item] > most:
+                    most = dict[item]
+                    current = item
+            final.append(current)
+            del dict[current]
+
+        return final[:k]
