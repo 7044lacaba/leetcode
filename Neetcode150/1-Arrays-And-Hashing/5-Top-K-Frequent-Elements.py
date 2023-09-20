@@ -57,14 +57,12 @@ class Solution(object):
 
         for item in nums:
             dict[item] = 1 + dict.get(item, 0)
-        for k, v in dict.items():
-            list[v].append(k)
+        for key, v in dict.items():
+            list[v].append(key)
 
-        print(dict)
-        print(list)
         final = []
         for i in range(len(list) - 1, 0, -1):
             for n in list[i]:
-                final.append(item)
+                final.append(n)
                 if len(final) == k:
                     return final
