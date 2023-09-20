@@ -10,8 +10,8 @@ for i in range(len(nums) + 1):
 
 for item in nums:
     dict[item] = 1 + dict.get(item, 0)
-for k, v in dict.items():
-    list[v].append(k)
+for key, v in dict.items():
+    list[v].append(key)
 
 print(dict)
 print(list)
