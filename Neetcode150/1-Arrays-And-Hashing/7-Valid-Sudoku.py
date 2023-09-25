@@ -30,7 +30,6 @@ class Solution(object):
                         return False
 
                     # Check box for similar values
-                    
                     if row == 0 or row == 1 or row == 2:
                         r = range(0,3)
                     elif row == 3 or row == 4 or row == 5:
@@ -44,8 +43,6 @@ class Solution(object):
                         c = range(3,6)
                     else:
                         c = range(6,9)
-                    
-
                     counter = 0 
                     for i in r:
                         for j in c:
@@ -53,4 +50,26 @@ class Solution(object):
                                 counter += 1
                     if counter > 1:
                         return False
+        return True
+    
+class Solution:
+    def isValidSudoku(self, board):
+        cols = collections.defaultdict(set)
+        rows = collections.defaultdict(set)
+        squares = collections.defaultdict(set)  # key = (r /3, c /3)
+
+        for r in range(9):
+            for c in range(9):
+                if board[r][c] == ".":
+                    continue
+                if (
+                    board[r][c] in rows[r]
+                    or board[r][c] in cols[c]
+                    or board[r][c] in squares[(r // 3, c // 3)]
+                ):
+                    return False
+                cols[c].add(board[r][c])
+                rows[r].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
+
         return True
