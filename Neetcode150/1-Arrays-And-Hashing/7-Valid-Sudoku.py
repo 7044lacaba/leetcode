@@ -54,9 +54,9 @@ class Solution(object):
     
 class Solution:
     def isValidSudoku(self, board):
-        cols = collections.defaultdict(set)
-        rows = collections.defaultdict(set)
-        squares = collections.defaultdict(set)  # key = (r /3, c /3)
+        cols = 1 #collections.defaultdict(set)
+        rows = 1 #collections.defaultdict(set)
+        squares = 1 #collections.defaultdict(set)  # key = (r /3, c /3)
 
         for r in range(9):
             for c in range(9):
