@@ -22,3 +22,12 @@ class Solution(object):
             else:
                 index_1 += 1
                 index_2 += 1
+
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        pass
