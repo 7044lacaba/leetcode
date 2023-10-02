@@ -30,4 +30,15 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        pass
+        index_l = 0
+        index_r = (len(numbers) - 1)
+        while index_l != index_r:
+            val_l = numbers[index_l]
+            val_r = numbers[index_r]
+            sum = val_l + val_r
+            if sum > target:
+                index_r -= 1
+            elif sum < target:
+                index_l += 1
+            else:
+                return [(index_l + 1), (index_r + 1)]
