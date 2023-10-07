@@ -11,7 +11,6 @@ class Solution(object):
         water = 0
 
         while r_ptr < (len(height) - 1):
-
             if height[r_ptr] >= height[l_ptr]:
                 water += self.convert(list, height[l_ptr])
                 list = []
@@ -21,15 +20,10 @@ class Solution(object):
                 if height[r_ptr] >= second[0]:
                     second[0] = height[r_ptr]
                     second[1] = r_ptr
-            
-            #check if at end 
-            if r_ptr + 1 == (len(height) - 1):
-                
-
-
-
-
-
+            if r_ptr + 1 == len(height):
+                water += self.convert(height[(l_ptr + 1): second[1]], second[1])
+            r_ptr += 1
+        return water
 
 
     def convert(self, list, convert_val):

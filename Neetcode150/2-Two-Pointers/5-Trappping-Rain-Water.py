@@ -4,45 +4,27 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        
-        # find start
+        l_ptr = 0
+        r_ptr = 0
+        list = []
+        second = [0,0]
+        water = 0
 
-        start = 0
-        for i, n in enumerate(height):
-            if n > height[i + 1]:
-                start = i
-                break
-        
-        # keep moving right pointer untill increase/equal is found 
-
-        l_pntr = start
-        r_pntr = start
-        prev_val = 0
-
-        max = height[l_pntr]
-
-        convert_list = []
-        middle = 0 
-
-        while r_pntr < (len(height) - 1):
-            
-            # move right pointer
-
-            r_pntr += 1
-
-            # check for increase 
-
-
-            # if next bar increases then move left and calculate the inside 
-            if height[r_pntr] >= height[l_pntr]:
-                # for item in convert list find the water value and add then up
-                # clear convert list 
-                pass
-                # l_pntr = r_pntr
+        while r_ptr < (len(height) - 1):
+            if height[r_ptr] >= height[l_ptr]:
+                water += self.convert(list, height[l_ptr])
+                list = []
+                l_ptr = r_ptr
             else:
-                convert_list.append(height[])
+                list.append(height[r_ptr])
+                if height[r_ptr] >= second[0]:
+                    second[0] = height[r_ptr]
+                    second[1] = r_ptr
+            if r_ptr + 1 == len(height):
+                water += self.convert(height[(l_ptr + 1): second[1]], second[1])
+            r_ptr += 1
+        return water
 
-# only enter the left pointer value if >=
 
     def convert(self, list, convert_val):
         total_water = 0
