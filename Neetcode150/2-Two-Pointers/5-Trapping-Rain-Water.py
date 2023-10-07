@@ -32,3 +32,9 @@ class Solution(object):
             water = convert_val - item
             total_water += water
         return total_water
+    
+
+    
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
+s = Solution()
+print(s.trap(height))
