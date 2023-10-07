@@ -41,7 +41,12 @@ class Solution(object):
                 # l_pntr = r_pntr
             else:
                 convert_list.append(height[])
+
+# only enter the left pointer value if >=
+
     def convert(self, list, convert_val):
-        total = 0
+        total_water = 0
         for item in list:
-            
+            water = convert_val - item
+            total_water += water
+        return total_water
