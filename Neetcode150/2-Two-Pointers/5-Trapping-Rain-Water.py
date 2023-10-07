@@ -6,35 +6,63 @@ class Solution(object):
         """
         l_ptr = 0
         r_ptr = 0
-        list = []
+
         second = [0,0]
         water = 0
+        prev_value = 0
 
-        while r_ptr < (len(height) - 1):
+        while r_ptr != len(height):
+
+            # check if previous value is 
+
+
+            # check if valid right wall is found
             if height[r_ptr] >= height[l_ptr]:
-                water += self.convert(list, height[l_ptr])
-                list = []
+
+                # convert val = the shorter wall
+                if height[r_ptr] > height[l_ptr]:
+                    convert_val = height[l_ptr]
+                elif height[r_ptr] < height[l_ptr]:
+                    convert_val = height[r_ptr]
+                else:
+                    convert_val = height[l_ptr]
+                
+                # convert sublist into water and add to total
+                sublist = height[(l_ptr + 1):r_ptr]
+                water += self.convert(sublist, convert_val)
+
+                # update left pointer
                 l_ptr = r_ptr
+
+                # reset the second highest
+                second = [0,0]
+            
             else:
-                list.append(height[r_ptr])
+                # check and update second highest
                 if height[r_ptr] >= second[0]:
                     second[0] = height[r_ptr]
                     second[1] = r_ptr
-            if r_ptr + 1 == len(height):
-                water += self.convert(height[(l_ptr + 1): second[1]], second[1])
+            
+            # if at end convert any valid values 
+            if r_ptr == (len(height) - 1) and l_ptr != r_ptr:
+                water += self.convert(height[(l_ptr + 1): second[1]], second[0])
+                return water
+            
+            # update previous value
+            prev_value = height[r_ptr]
             r_ptr += 1
         return water
-
 
     def convert(self, list, convert_val):
         total_water = 0
         for item in list:
             water = convert_val - item
-            total_water += water
+            if water > 0:
+                total_water += water
         return total_water
     
 
     
-height = [0,1,0,2,1,0,1,3,2,1,2,1]
+height = [5,4,1,2]
 s = Solution()
 print(s.trap(height))
