@@ -22,7 +22,7 @@ class Solution(object):
                 r += 1
 
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring(self, s):
         charSet = set()
         l = 0
         res = 0
