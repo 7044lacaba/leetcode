@@ -63,7 +63,7 @@ class Solution(object):
         return most
 
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def characterReplacement(self, s, k):
         charSet = set()
         l = 0
         res = 0
