@@ -1,5 +1,17 @@
-list = [3,2,1,0]
+list_1 = {
+    'a' : 22,
+    'b' : 2,
+    'c' : 3
+}
 
-list = list[0:1]
+list_2 = {
+    'c' : 3,
+    'a' : 22,
+    'b' : 2
 
-print(list)
+}
+
+if list_1 == list_2:
+    print("true")
+else:
+    print("false")
