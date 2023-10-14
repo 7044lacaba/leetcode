@@ -1,17 +1,5 @@
-list_1 = {
-    'a' : 22,
-    'b' : 2,
-    'c' : 3
-}
+string = "hello"
 
-list_2 = {
-    'c' : 3,
-    'a' : 22,
-    'b' : 2
+e = [*string]
 
-}
-
-if list_1 == list_2:
-    print("true")
-else:
-    print("false")
+print(e)
