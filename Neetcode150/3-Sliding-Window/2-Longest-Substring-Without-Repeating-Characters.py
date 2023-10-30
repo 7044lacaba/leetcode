@@ -35,6 +35,6 @@ class Solution:
             res = max(res, r - l + 1)
         return res
 
-str = " "
+str = "abcdcaao"
 s = Solution()
 print(s.lengthOfLongestSubstring(str))
