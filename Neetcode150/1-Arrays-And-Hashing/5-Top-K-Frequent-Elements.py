@@ -61,7 +61,7 @@ class Solution(object):
             list[v].append(key)
 
         final = []
-        for i in range(len(list) - 1, 0, -1):
+        for i in range(len(list) -1, 0, -1):
             for n in list[i]:
                 final.append(n)
                 if len(final) == k:
