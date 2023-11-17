@@ -1,5 +1,60 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
         if t == "":
             return ""
 
