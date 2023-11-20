@@ -18,3 +18,12 @@ k = 3
 
 s = Solution()
 print(s.maxSlidingWindow(nums, k))
+
+
+
+
+
+
+
+
+# start window, add  
