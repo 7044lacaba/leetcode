@@ -72,7 +72,7 @@ class Solution:
 
 
 
-s = "}{"
+st = "}{"
 
 s = Solution()
 print(s.isValid(st))
